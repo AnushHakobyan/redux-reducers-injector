@@ -49,8 +49,12 @@ export function createInjectStore(initialReducers, ...args) {
     return store;
 }
 
-export function reloadReducer(key, reducer) {
-    store.replaceReducer(combineReducersRecurse({...store.injectedReducers, [key]: reducer}));
+export function reloadReducer(reducer, key) {
+    if(key) {
+        store.replaceReducer(combineReducersRecurse({...store.injectedReducers, [key]: reducer}));
+    } else {
+        store.replaceReducer(combineReducersRecurse({...store.injectedReducers, ...reducer}));
+    }
 }
 
 export function injectReducer(key, reducer, force = false) {
