@@ -1,3 +1,6 @@
+# redux-reducers-injector-forked
+Forked redux-reducers-injector package. This version allows to add many reducers, without specifying object keys.
+
 # redux-reducers-injector
 Allows dynamically injecting reducers into a redux store at runtime.
 Compatible with HMR and SSR.
